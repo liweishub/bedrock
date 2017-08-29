@@ -1,0 +1,306 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+@import '../../pebbles/includes/lib';
+@import '../../hubs/buttons';
+
+body {
+    @include open-sans;
+}
+
+h2,
+h3 {
+    @include zilla-slab;
+}
+
+.section-content {
+    text-align: left;
+}
+
+#intro {
+    @include gradient-horizontal($start-color: #D3C3DC, $end-color: #ECC5D7);
+    color: #000;
+
+    h2,
+    h3 {
+        color: #000;
+        text-align: left;
+        text-shadow: none;
+    }
+
+    h2 {
+        font-style: normal;
+        line-height: 1;
+        margin-bottom: 30px;
+        padding: 0;
+    }
+
+    h3 {
+        @include open-sans;
+        font-weight: 100;
+        padding: 0;
+    }
+
+    .content {
+        background: transparent;
+        height: auto;
+        padding: 40px 20px;
+    }
+}
+
+#intro-mozilla {
+    margin-bottom: 60px;
+}
+
+#intro-promo {
+    background: #fff;
+    padding: 20px;
+
+    h2 {
+        padding-right: 100px;
+        position: relative;
+
+        &:before {
+            @include at2x('/media/img/logos/firefox/logo-small.png', 80px, 80px);
+            content: '';
+            display: block;
+            height: 80px;
+            margin-bottom: 10px;
+            width: 80px;
+        }
+    }
+
+    .fx-privacy-link {
+        a {
+            color: #000;
+        }
+    }
+
+    .state-fx-signed-out,
+    .state-fx-signed-in {
+        display: none;
+    }
+
+    @media #{$mq-tablet} {
+        h2:before {
+            content: none;
+        }
+
+        h2:after {
+            @include at2x('/media/img/logos/firefox/logo-small.png', 80px, 80px);
+            content: '';
+            display: inline-block;
+            height: 80px;
+            margin-top: -40px;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 80px;
+        }
+    }
+}
+
+@media #{$mq-tablet} {
+    #intro-wrapper {
+        display: table;
+    }
+
+    #intro-mozilla,
+    #intro-promo {
+        display: table-cell;
+        padding: 0;
+        position: relative;
+        width: 50%;
+    }
+
+    .intro-content {
+        padding: 40px;
+    }
+}
+
+#impact-innovate-wrapper {
+    padding: 40px 0;
+
+    @media #{$mq-tablet} {
+        padding: 80px 0;
+    }
+}
+
+#impact {
+    @media #{$mq-tablet} {
+        width: calc(50% - 1px);
+        border-right: 1px solid rgba(0, 0, 0, 0.2);
+    }
+}
+
+#impact,
+#innovate {
+    @include border-box;
+    background: #fff;
+    color: inherit;
+
+    .section-content:before {
+        content: none;
+    }
+
+    .icon-links a,
+    .section-headline {
+        color: inherit;
+    }
+
+    .icon-links .icon use {
+        fill: #000;
+    }
+
+    @media #{$mq-tablet} {
+        padding: 0 20px;
+    }
+
+    @media #{$mq-desktop} {
+        padding: 0 40px;
+    }
+}
+
+.icon-links {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+
+    li {
+        margin-bottom: 20px;
+    }
+
+    a {
+        &:before {
+            content: none;
+        }
+
+        &:after {
+            background: url('/media/img/hubs/cta-arrow-black.svg') 0 0 no-repeat;
+            @include background-size(14px, 24px);
+            content: '';
+            display: inline-block;
+            height: 12px;
+            margin-left: 20px;
+            width: 14px;
+        }
+    }
+
+    .icon {
+        left: -10px;
+    }
+
+    @media #{$mq-tablet} {
+        a {
+            display: block;
+            padding-right: 30px;
+
+            &:after {
+                bottom: 50%;
+                display: block;
+                margin-left: 0;
+                position: absolute;
+                right: 0;
+            }
+        }
+    }
+
+    @media #{$mq-desktop} {
+        width: 80%;
+    }
+
+    @media #{$mq-desktop-wide} {
+        li {
+            padding-left: 74px;
+        }
+    }
+}
+
+.section-externals {
+    background: #fff;
+    text-align: left;
+
+    .content {
+        border-top: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    h3 {
+        margin-bottom: 0.8rem;
+        padding-top: 120px;
+
+        &:before {
+            height: 100px;
+            width: 100px;
+        }
+    }
+
+    ul li {
+        max-width: none;
+    }
+
+    a {
+        text-align: left;
+
+        &.add-ons h3:before {
+            @include at2x('/media/img/home/2016/b/externals-sprite.png', 100px, 300px);
+            background-position: left top;
+        }
+
+        &.careers h3:before {
+            @include at2x('/media/img/home/2016/b/externals-sprite.png', 100px, 300px);
+            background-position: left -100px;
+        }
+
+        &.help h3:before {
+            @include at2x('/media/img/home/2016/b/externals-sprite.png', 100px, 300px);
+            background-position: left -200px;
+        }
+    }
+}
+
+#newsletter-subscribe {
+    color: #000;
+
+    &.section-newsletter {
+        @include gradient-horizontal($start-color: #D3C3DC, $end-color: #ECC5D7);
+
+        .form-title {
+            background-position: left top;
+            text-align: left;
+
+            h3 {
+                color: #000;
+                font-style: normal;
+            }
+
+            h4 {
+                color: #000;
+            }
+        }
+    }
+
+    a {
+        color: #000;
+    }
+
+    select {
+        width: 100%;
+    }
+
+    .newsletter-form {
+        .form-contents,
+        .form-submit {
+            margin: 0;
+        }
+    }
+
+    button.form-button.button-light {
+        color: #000;
+        border-color: #000;
+    }
+}
+
+#home #newsletter-subscribe h3 {
+    text-align: left;
+}
